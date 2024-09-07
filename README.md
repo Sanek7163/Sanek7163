@@ -18,6 +18,6 @@
 
 
 ## Коллекция в Postman
-<a href="https://%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D1%87%D0%BA%D1%83_%D1%81%D1%8E%D0%B4%D0%B0" rel="nofollow">VKontakte</a>
+<a href="https://raw.githubusercontent.com/Sanek7163/Sanek7163/main/API%20%D0%92%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%B5.postman_collection.json" rel="nofollow">VKontakte</a>
 
 ### Связь со мной:
