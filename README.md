@@ -1,5 +1,6 @@
-
-  <img src="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif" class="center">
+<div style="text-align:center;">
+<img src="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif" alt="image description" />
+</div>
 
 
 ## Привет, я  Александр!
