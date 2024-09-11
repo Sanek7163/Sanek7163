@@ -1,5 +1,5 @@
 
-  <img src="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif" alt="Задана ширина и высота" width="1000" height="100">
+  <img src="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif" alt="Задана ширина и высота" width="1000" height="500">
 
 
 
