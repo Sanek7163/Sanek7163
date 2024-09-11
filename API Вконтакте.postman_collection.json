@@ -1,0 +1,580 @@
+{
+	"info": {
+		"_postman_id": "1ddf8e8c-54cd-41b9-a0c2-63a3667773b8",
+		"name": "API Вконтакте",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36738310"
+	},
+	"item": [
+		{
+			"name": "Создать альбом",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Альбом создан\", function () {\r",
+							"    var jsonData = JSON.parse(responseBody);\r",
+							"    pm.collectionVariables.set(\"album_id\", jsonData.response.id);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/photos.createAlbum?title=test album&access_token={{token}}&v={{v}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"photos.createAlbum"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "test album"
+						},
+						{
+							"key": "access_token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить адрес для загрузки фото",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Адрес прописан\", function () {\r",
+							"    var jsonData = JSON.parse(responseBody);\r",
+							"    pm.collectionVariables.set(\"upload_url\", jsonData.response.upload_url);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}",
+							"type": "text"
+						},
+						{
+							"key": "album_id",
+							"value": "{{album_id}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/photos.getUploadServer",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"photos.getUploadServer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Загрузить фото",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Фото загружено на сервер\", function () {\r",
+							"    var jsonData = JSON.parse(responseBody);\r",
+							"    pm.collectionVariables.set(\"photos_list\", jsonData.response.photos_list);\r",
+							"    pm.collectionVariables.set(\"server\", jsonData.response.server);\r",
+							"    pm.collectionVariables.set(\"hash\", jsonData.response.hash);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file1",
+							"type": "file",
+							"src": "postman-cloud:///1ef4f326-72dd-4230-bef2-fd05486a9259"
+						},
+						{
+							"key": "file2",
+							"type": "file",
+							"src": "postman-cloud:///1ef4f326-d0b4-4930-9a34-56313eeccf4d"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{upload_url}}",
+					"host": [
+						"{{upload_url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Сохранить фото в альбом",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "album_id",
+							"value": "{{album_id}}",
+							"type": "text"
+						},
+						{
+							"key": "server",
+							"value": "{{server}}",
+							"type": "text"
+						},
+						{
+							"key": "photos_list",
+							"value": "{{photos_list}}",
+							"type": "text"
+						},
+						{
+							"key": "access_token",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}",
+							"type": "text"
+						},
+						{
+							"key": "hash",
+							"value": "{{hash}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/photos.save",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"photos.save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Список фото",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "access_token",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}",
+							"type": "text"
+						},
+						{
+							"key": "album_id",
+							"value": "{{album_id}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/photos.get",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"photos.get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавить комментарий (фото 1)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Фото загружено на сервер\", function () {\r",
+							"    var jsonData = JSON.parse(responseBody);\r",
+							"    pm.collectionVariables.set(\"comment_id1\", jsonData.response);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}",
+							"type": "text"
+						},
+						{
+							"key": "album_id",
+							"value": "{{album_id}}",
+							"type": "text"
+						},
+						{
+							"key": "photo_id",
+							"value": "{{photo_id1}}",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "komment pod 1 photo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/photos.createComment",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"photos.createComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавить комментарий (фото 2) Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Фото загружено на сервер\", function () {\r",
+							"    var jsonData = JSON.parse(responseBody);\r",
+							"    pm.collectionVariables.set(\"comment_id2\", jsonData.response);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}",
+							"type": "text"
+						},
+						{
+							"key": "album_id",
+							"value": "{{album_id}}",
+							"type": "text"
+						},
+						{
+							"key": "photo_id",
+							"value": "{{photo_id2}}",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "коммент под 2 фото",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/photos.createComment",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"photos.createComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Редактировать комментарий (1 фото)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}",
+							"type": "text"
+						},
+						{
+							"key": "album_id",
+							"value": "{{album_id}}",
+							"type": "text"
+						},
+						{
+							"key": "comment_id",
+							"value": "{{comment_id1}}",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "Отредактировал",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/photos.editComment",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"photos.editComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удалить фото",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}",
+							"type": "text"
+						},
+						{
+							"key": "photo_id",
+							"value": "{{photo_id1}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/photos.delete",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"photos.delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удалить альбом",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_token",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": "v",
+							"value": "{{v}}",
+							"type": "text"
+						},
+						{
+							"key": "album_id",
+							"value": "{{album_id}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/photos.deleteAlbum",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"photos.deleteAlbum"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "vk1.a.TIf3iWZ9Op-PCU6n97tELVWJCFcaMFON_cij0ywYj5WifLXLWOBWeeMkNdVRPWY1vVoldfdJ5Z-PraN_D2Tlv9-aARmamMYu--qD2BQWrWxvBK98U7PSKJBpA5iRCSonTEAVViTix0XeUobaoTBS09zxW9jjABB7um4OHKyvdQa2L1qaXKuSpRIHi0AUuKk6Uz3B5jEdw23d6XZwyijI3g",
+			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "https://api.vk.com/method/",
+			"type": "string"
+		},
+		{
+			"key": "v",
+			"value": "5.199",
+			"type": "string"
+		},
+		{
+			"key": "album_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "upload_url",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "server",
+			"value": ""
+		},
+		{
+			"key": "photos_list",
+			"value": ""
+		},
+		{
+			"key": "hash",
+			"value": ""
+		},
+		{
+			"key": "photo_id1",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "photo_id2",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "comment_id1",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "comment_id2",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
