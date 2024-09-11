@@ -1,5 +1,5 @@
-<img src="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif" width="500%" 
-  height="200">
+<img src="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif" width="100%" 
+  height="400">
 
 
 ## Привет, я  Александр!
