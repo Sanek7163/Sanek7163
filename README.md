@@ -1,7 +1,7 @@
 
 
 <div align="center" dir="auto">
-  <animated-image data-catalyst="" style="width: 600px;"><a target="_blank" rel="noopener noreferrer nofollow" href="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif" data-target="animated-image.originalLink"><img height="300" src="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage"></a>
+  <animated-image data-catalyst="" style="width: 600px;"><a target="_blank" rel="noopener noreferrer nofollow" href="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif" data-target="animated-image.originalLink"><img height="300" src="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif" style="max-width: 400%; display: inline-block;" data-target="animated-image.originalImage"></a>
       <span class="AnimatedImagePlayer" data-target="animated-image.player" hidden="">
         <a data-target="animated-image.replacedLink" class="AnimatedImagePlayer-images" href="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif" target="_blank">
 </div>
@@ -37,8 +37,8 @@
 ![devtools](https://img.shields.io/badge/-devtools-090909?style=for-the-badge&logo=devtools&logoColor=27A0D9)
 ![UI/UX](https://img.shields.io/badge/-UI/UX-090909?style=for-the-badge&logo=UI/UX&logoColor=27A0D9)
 
-# Портфолио
-## Тестовая документация
+### Портфолио
+### Тестовая документация
 <a href="https://docs.google.com/spreadsheets/d/1EfuC8Jb_Q4CXeDC1KaI1EaqCSmPP7was1c-4r00DkWA/edit?gid=1103595938#gid=1103595938" rel="nofollow">Чек-лист</a>
 
 <a href="https://docs.google.com/spreadsheets/d/1EfuC8Jb_Q4CXeDC1KaI1EaqCSmPP7was1c-4r00DkWA/edit?gid=0#gid=0" rel="nofollow">Тест-кейсы</a>
@@ -47,7 +47,7 @@
 
 
 
-## Коллекция в Postman
+### Коллекция в Postman
 <a href="https://raw.githubusercontent.com/Sanek7163/Sanek7163/main/API%20%D0%92%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%B5.postman_collection.json" rel="nofollow">VKontakte</a>
 
 <details> 
