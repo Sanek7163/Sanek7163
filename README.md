@@ -32,6 +32,7 @@
 С мая по август 2024 года прошел обучение по курсу "Специалист по ручному тестированию" с получением диплома об окончании, где освоил такие интсрументы как:
 
 ![postman](https://img.shields.io/badge/-postman-090909?style=for-the-badge&logo=postman&logoColor=27A0D9)
+![swagger](https://img.shields.io/badge/-swagger-090909?style=for-the-badge&logo=swagger&logoColor=27A0D9)
 ![MySQL](https://img.shields.io/badge/-MySQL-090909?style=for-the-badge&logo=MySQL&logoColor=27A0D9)
 ![git](https://img.shields.io/badge/-git-090909?style=for-the-badge&logo=git&logoColor=27A0D9)
 ![devtools](https://img.shields.io/badge/-devtools-090909?style=for-the-badge&logo=devtools&logoColor=27A0D9)
