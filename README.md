@@ -1,7 +1,7 @@
 <div style="text-align:center;">
 <img src="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif" alt="image description" />
 </div>
-
+<img height="300" src="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage">
 
 ## Привет, я  Александр!
 ### Я Junior QA Manual.
