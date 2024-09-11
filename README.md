@@ -1,6 +1,7 @@
 
-  <img src="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif" alt="Задана ширина и высота" width="1000" height="500">
-
+<center>
+  <img src="https://media1.tenor.com/m/C1r3YSmu4IQAAAAC/coding.gif">
+</center>
 
 
 ## Привет, я  Александр!
