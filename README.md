@@ -48,7 +48,7 @@
 
 <a href="https://docs.google.com/spreadsheets/d/1EfuC8Jb_Q4CXeDC1KaI1EaqCSmPP7was1c-4r00DkWA/edit?gid=335394616#gid=335394616" rel="nofollow">Баг-репорты</a>
 
-### Проектная работы для Ростелеком
+### Проектная работа для ПАО Ростелеком
 <a href="https://docs.google.com/spreadsheets/d/1VSVN504jWqwxGr5sIM1zrctWleGq6eHNYx3FEYIwqec/edit?gid=1103595938#gid=1103595938" rel="nofollow">Тестовая документация</a>
 
 <a href="https://disk.yandex.ru/i/9WoP6SBWO7wc7g" rel="nofollow">Тест-план</a>
